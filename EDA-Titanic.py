@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # Load the data set
 
-df = pd.read_csv("titanic.csv")
+df = pd.read_csv("data/titanic.csv")
 
 # Clean the data
 
