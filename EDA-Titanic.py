@@ -12,7 +12,7 @@ df.dropna(inplace=True)
 # Set a Style for the plots
 sns.set(style="whitegrid")
 
-# Example analysis: Survivel by class
+# Survival by class
 plt.figure(figsize=(8, 6))
 sns.barplot(x="Pclass", y="Survived", data=df, palette="Blues_d")
 plt.title("Survival Rate by Passenger Class", fontsize=16)
@@ -22,7 +22,17 @@ plt.xticks([0, 1, 2], ["1st Class", "2nd Class", "3rd Class"], fontsize=10)
 plt.tight_layout()
 plt.show()
 
-# Example analysis: Distribution of Age
-sns.histplot(df['Age'], bins=20, kde=True)
-plt.title("Age Distribution of Passengers")
+# Distribution of Age
+plt.figure(figsize=(10, 6))
+sns.histplot(df['Age'], bins=20, kde=True, color='green')
+
+# Calculate mean age using numpy and add to the plot
+mean_age = np.mean(df['Age'])
+plt.axvline(mean_age, color='red', linestyle='--', label=f'mean_age: {mean_age:.2f}')
+
+plt.title("Age Distribuition of Titanic Passengers", fontsize=16)
+plt.xlabel("Age", fontsize=12)
+plt.ylabel("Count", fontsize=12)
+plt.legend()
+plt.tight_layout()
 plt.show()
