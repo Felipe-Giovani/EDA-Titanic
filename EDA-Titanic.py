@@ -36,3 +36,19 @@ plt.ylabel("Count", fontsize=12)
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+# Survival Rate by Gender
+plt.figure(figsize=(8, 6))
+sns.barplot(x="Sex", y="Survived", data=df, palette="Set2")
+plt.title("Survival Rate by Gender", fontsize=16)
+plt.xlabel("Gender", fontsize=12)
+plt.ylabel("Survival Rate", fontsize=12)
+plt.xticks([0, 1], ["Female", "Male"], fontsize=10)
+plt.tight_layout()
+plt.show()
+
+
+
+
+
+
