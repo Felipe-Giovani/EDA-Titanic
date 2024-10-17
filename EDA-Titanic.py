@@ -47,8 +47,13 @@ plt.xticks([0, 1], ["Female", "Male"], fontsize=10)
 plt.tight_layout()
 plt.show()
 
+# Correlation Heatmap
+plt.figure(figsize=(10, 8))
+numerical_df = df.select_dtypes(include=[np.number])
+correlation = numerical_df.corr()
 
-
-
-
-
+# Create a heatmap to visualize the correlations between numeric variables
+sns.heatmap(correlation, annot=True, cmap="coolwarm", linewidths=0.5, fmt='.2f')
+plt.title("Feature Correlation Heatmap", fontsize=16)
+plt.tight_layout()
+plt.show()
